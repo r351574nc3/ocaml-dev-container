@@ -29,8 +29,4 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 
 ENV PATH=$PATH:$HOME/.opam/system/bin/
 
-RUN opam init \
-    && eval `opam config env` \
-    && source $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null \
-    && opam install dune \
-    && opam install ocamlfind
+RUN opam init 
