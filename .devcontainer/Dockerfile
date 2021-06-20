@@ -4,6 +4,8 @@
 ARG VARIANT="buster"
 FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
+ARG USER=vscode
+
 # ** [Optional] Uncomment this section to install additional packages. **
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
      && apt-get -y install --no-install-recommends \
@@ -27,6 +29,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
             rsync \
     && apt-get clean -y
 
+USER $USER
 ENV PATH=$PATH:$HOME/.opam/system/bin/
 
 RUN opam init \
