@@ -30,4 +30,5 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 ENV PATH=$PATH:$HOME/.opam/system/bin/
 
 RUN opam init \
-    && eval `opam config env` 
+    && eval `opam config env`
+
