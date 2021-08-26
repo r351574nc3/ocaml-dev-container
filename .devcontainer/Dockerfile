@@ -22,10 +22,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
             dialog \
             nano \
             libx11-dev \
-            ocaml \
-            ocaml-native-compilers \
-            camlp4-extra \
-            opam \
             rsync \
     && apt-get clean -y
 
@@ -34,4 +30,3 @@ ENV PATH=$PATH:$HOME/.opam/system/bin/
 
 RUN opam init \
     && eval `opam config env`
-
